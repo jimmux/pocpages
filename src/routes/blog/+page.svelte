@@ -1,35 +1,38 @@
 <script lang="ts">
-  import { showDate } from "$lib/utils";
+	import { showDate } from '$lib/utils';
 
 	let { data } = $props();
 
-  let prettyData = $derived({
-    ...data,
-    posts: data.posts.map(post => ({
-      ...post,
-      meta: {
-        ...post.meta,
-        date: showDate(post.meta.date)
-      }
-    }))
-  });
-
+	let prettyData = $derived({
+		...data,
+		posts: data.posts.map((post) => ({
+			...post,
+			meta: {
+				...post.meta,
+				date: showDate(post.meta.date)
+			}
+		}))
+	});
 </script>
 
-<template lang="pug">
+<section class="section">
+	<div class="title">Blog</div>
+</section>
 
-  section.section
-    .title Blog
-
-  section.section
-    ul.container
-      +each("prettyData.posts as post")
-        li.block
-          a.subtitle(href!="{post.path}")
-            | {post.meta.title}
-          p.is-italic Published {post.meta.date}
-
-</template>
+<section class="section">
+	<ul class="container">
+		{#each prettyData.posts as post}
+			<li class="block">
+				<a class="subtitle" href={post.path}>
+					{post.meta.title}
+				</a>
+				<p class="is-italic">
+					Published {post.meta.date}
+				</p>
+			</li>
+		{/each}
+	</ul>
+</section>
 
 <style>
 </style>

@@ -5,17 +5,19 @@ import type { SvelteComponent } from 'svelte';
 export const prerender = false;
 
 export interface BlogPost extends BlogPostMetadata {
-  Content: SvelteComponent
+	Content: SvelteComponent;
 }
 
 export async function load({ params }): Promise<BlogPost> {
-  const { metadata: { title, date, author }, default: Content }
-    = await import(`../posts/${params.post}.md`) as Markdown<BlogPostMetadata>;
+	const {
+		metadata: { title, date, author },
+		default: Content
+	} = (await import(`../posts/${params.post}.md`)) as Markdown<BlogPostMetadata>;
 
-  return {
-    Content,
-    title,
-    date,
-    author
-  };
+	return {
+		Content,
+		title,
+		date,
+		author
+	};
 }

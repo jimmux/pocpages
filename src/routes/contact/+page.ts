@@ -5,14 +5,13 @@ import type { SvelteComponent } from 'svelte';
 export const prerender = false;
 
 export interface ContactContent {
-  Content: SvelteComponent
+	Content: SvelteComponent;
 }
 
 export async function load(): Promise<ContactContent> {
-  const { default: Content }
-    = await import(`./index.md`) as Markdown<undefined>;
+	const { default: Content } = (await import(`./index.md`)) as Markdown<undefined>;
 
-  return {
-    Content
-  };
+	return {
+		Content
+	};
 }

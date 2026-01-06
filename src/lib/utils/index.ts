@@ -1,40 +1,41 @@
-import type { SvelteComponent } from "svelte";
+import type { SvelteComponent } from 'svelte';
 
 export interface BlogPostMetadata {
-  title: string,
-  date: string,
-  author: string
+	title: string;
+	date: string;
+	author: string;
 }
 
 export interface Markdown<M> {
-  metadata: M,
-  default: SvelteComponent
+	metadata: M;
+	default: SvelteComponent;
 }
 
 export interface MarkdownPost {
-  meta: BlogPostMetadata,
-  path: string
+	meta: BlogPostMetadata;
+	path: string;
 }
 
 export async function fetchMarkdownPosts(): Promise<MarkdownPost[]> {
-  const iterablePostFiles =
-    Object.entries(import.meta.glob<Markdown<BlogPostMetadata>>("/src/routes/blog/posts/*.md"));
+	const iterablePostFiles = Object.entries(
+		import.meta.glob<Markdown<BlogPostMetadata>>('/src/routes/blog/posts/*.md')
+	);
 
-  const allPosts = await Promise.all(
-    iterablePostFiles.map(async ([path, resolver]) => {
-      const { metadata } = await resolver();
-      const postPath = `/blog/${path.slice(23, -3)}`;
+	const allPosts = await Promise.all(
+		iterablePostFiles.map(async ([path, resolver]) => {
+			const { metadata } = await resolver();
+			const postPath = `/blog/${path.slice(23, -3)}`;
 
-      return {
-        meta: metadata,
-        path: postPath
-      };
-    })
-  );
+			return {
+				meta: metadata,
+				path: postPath
+			};
+		})
+	);
 
-  return allPosts;
-};
+	return allPosts;
+}
 
 export function showDate(date: string): string {
-  return new Date(date).toLocaleDateString();
+	return new Date(date).toLocaleDateString();
 }

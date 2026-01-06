@@ -9,17 +9,22 @@
 	let prettyDate = $derived(showDate(date));
 </script>
 
-<template lang="pug">
-  
-  article.container
-    section.section
-      .title {title}
-      .subtitle {prettyDate}
-      .block.is-italic {author}
-    section.section
-      Content
-
-</template>
+<article class="container">
+	<section class="section">
+		<div class="title">
+			{title}
+		</div>
+		<div class="subtitle">
+			{prettyDate}
+		</div>
+		<div class="block is-italic">
+			{author}
+		</div>
+	</section>
+	<section class="section">
+		<Content />
+	</section>
+</article>
 
 <style>
 </style>

@@ -1,7 +1,7 @@
 ---
 ---
 
-*Example of a page mostly written with Markdown*
+_Example of a page mostly written with Markdown_
 
 Contact us at:
 

@@ -7,7 +7,7 @@ content:
     type: collection
     path: src/routes/blog/posts
     subfolders: false
-    filename: "{date}.md"
+    filename: '{date}.md'
     view:
       fields: [title, date, author]
       primary: title

@@ -2,7 +2,7 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { sveltePreprocess } from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
-import addClasses from "rehype-class-names";
+import addClasses from 'rehype-class-names';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,11 +13,16 @@ const config = {
 		sveltePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
-			rehypePlugins: [[addClasses, {
-				// Bulma classes can be added to markdown content here
-				"h1,h2": "subtitle",
-				p: "block"
-			}]]
+			rehypePlugins: [
+				[
+					addClasses,
+					{
+						// Bulma classes can be added to markdown content here
+						'h1,h2': 'subtitle',
+						p: 'block'
+					}
+				]
+			]
 		})
 	],
 	kit: {

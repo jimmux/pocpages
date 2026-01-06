@@ -1,21 +1,20 @@
 <script lang="ts">
 	import type { ContactContent } from './+page';
 
-  let { data } = $props();
+	let { data } = $props();
 
-  const { Content } = data as ContactContent; 
-
+	const { Content } = data as ContactContent;
 </script>
 
-<template lang="pug">
-  section.section
-    .title Contact
+<section class="section">
+	<div class="title">Contact</div>
+</section>
 
-  section.section
-    .container
-      Content
-
-</template>
+<section class="section">
+	<div class="container">
+		<Content />
+	</div>
+</section>
 
 <style>
 </style>
