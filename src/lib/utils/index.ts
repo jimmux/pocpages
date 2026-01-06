@@ -1,4 +1,4 @@
-import type { SvelteComponent } from 'svelte';
+import type { Component } from 'svelte';
 
 export interface BlogPostMetadata {
 	title: string;
@@ -8,7 +8,7 @@ export interface BlogPostMetadata {
 
 export interface Markdown<M> {
 	metadata: M;
-	default: SvelteComponent;
+	default: Component;
 }
 
 export interface MarkdownPost {

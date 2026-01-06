@@ -6,7 +6,7 @@ This is a combo I've found useful for setting up simple websites that allows for
 
 Using `svelte-preprocess` for Pug templates on Svelte, because I think better in whitespace.
 
-Bulma has always been a very practical default styling option, with pretty obvious classes and minimal work required to tweak it.
+I started using Bulma for CSS and components because it's always been a versatile and reliabel option, but switched to Flowbite Svelte because it currently has better support and the components lend themselves even better to rapid development. Better compatibility with Tailwind is a bonus.
 
 PagesCMS is a very handy option for empowering clients to directly contribute copy.
 

@@ -1,20 +1,18 @@
 <script lang="ts">
-	import type { ContactContent } from './+page';
+	import { Heading, P } from 'flowbite-svelte';
+import type { ContactContent } from './+page';
 
 	let { data } = $props();
 
 	const { Content } = data as ContactContent;
 </script>
 
-<section class="section">
-	<div class="title">Contact</div>
+<section>
+	<Heading>Contact</Heading>
 </section>
 
-<section class="section">
-	<div class="container">
+<section>
+	<P>
 		<Content />
-	</div>
+	</P>
 </section>
-
-<style>
-</style>

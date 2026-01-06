@@ -1,11 +1,11 @@
 import type { BlogPostMetadata, Markdown } from '$lib/utils/index.js';
-import type { SvelteComponent } from 'svelte';
+import type { Component } from 'svelte';
 
 // Need to override static site adapter setting in +layout.js
 export const prerender = false;
 
 export interface BlogPost extends BlogPostMetadata {
-	Content: SvelteComponent;
+	Content: Component;
 }
 
 export async function load({ params }): Promise<BlogPost> {

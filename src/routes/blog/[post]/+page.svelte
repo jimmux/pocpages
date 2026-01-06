@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { BlogPost } from './+page';
 	import { showDate } from '$lib/utils';
+	import { Heading, P } from 'flowbite-svelte';
 
 	let { data } = $props();
 
@@ -9,20 +10,22 @@
 	let prettyDate = $derived(showDate(date));
 </script>
 
-<article class="container">
-	<section class="section">
-		<div class="title">
+<article>
+	<section>
+		<Heading>
 			{title}
-		</div>
-		<div class="subtitle">
+		</Heading>
+		<Heading tag="h4">
 			{prettyDate}
-		</div>
-		<div class="block is-italic">
+		</Heading>
+		<Heading tag="h5">
 			{author}
-		</div>
+		</Heading>
 	</section>
-	<section class="section">
-		<Content />
+	<section>
+		<P>
+			<Content />
+		</P>
 	</section>
 </article>
 

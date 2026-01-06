@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { showDate } from '$lib/utils';
+	import { A, Heading, P } from 'flowbite-svelte';
 
 	let { data } = $props();
 
@@ -15,20 +16,20 @@
 	});
 </script>
 
-<section class="section">
-	<div class="title">Blog</div>
+<section>
+	<Heading>Blog</Heading>
 </section>
 
-<section class="section">
-	<ul class="container">
+<section>
+	<ul>
 		{#each prettyData.posts as post}
-			<li class="block">
-				<a class="subtitle" href={post.path}>
+			<li>
+				<A href={post.path}>
 					{post.meta.title}
-				</a>
-				<p class="is-italic">
+				</A>
+				<P>
 					Published {post.meta.date}
-				</p>
+				</P>
 			</li>
 		{/each}
 	</ul>

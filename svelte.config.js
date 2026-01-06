@@ -17,7 +17,9 @@ const config = {
 				[
 					addClasses,
 					{
-						// Bulma classes can be added to markdown content here
+						// Utility classes can be added to markdown content here.
+						// TODO: Use the preprocessors I made for other projects
+						// to wrap with components instead.
 						'h1,h2': 'subtitle',
 						p: 'block'
 					}
