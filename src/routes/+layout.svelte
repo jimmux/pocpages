@@ -16,7 +16,8 @@
 	const links: NavLink[] = [
 		["Home", "/"],
 		["Blog", "/blog"],
-		["Contact", "/contact"]
+		["Contact", "/contact"],
+		["Examples", "/examples"]
 	];
 
 	setContext('iconCtx', {

@@ -7,32 +7,55 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-    --primary-hue: 210;
-    --secondary-hue: 20;
-}
+    --primary-hue: 170;
+    --primary-saturation: 30%;
+    --secondary-hue: 240;
+    --secondary-saturation: 30%;
+
+    /* I know, but flowbite comes with a bluish version of grey. */
+    --hue-gray: 40;
+    --saturation-gray: 5%;
+
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --default-font-family: var(--font-sans);
+  }
 
 @theme {
-  --color-primary-50: hsl(var(--primary-hue), 100%, 97%);
-  --color-primary-100: hsl(var(--primary-hue), 100%, 97%);
-  --color-primary-200: hsl(var(--primary-hue), 100%, 94%);
-  --color-primary-300: hsl(var(--primary-hue), 100%, 90%);
-  --color-primary-400: hsl(var(--primary-hue), 100%, 84%);
-  --color-primary-500: hsl(var(--primary-hue), 99%, 68%);
-  --color-primary-600: hsl(var(--primary-hue), 86%, 56%);
-  --color-primary-700: hsl(var(--primary-hue), 83%, 54%);
-  --color-primary-800: hsl(var(--primary-hue), 71%, 47%);
-  --color-primary-900: hsl(var(--primary-hue), 72%, 38%);
+  --color-primary-50: hsl(var(--primary-hue), var(--primary-saturation), 97%);
+  --color-primary-100: hsl(var(--primary-hue), var(--primary-saturation), 97%);
+  --color-primary-200: hsl(var(--primary-hue), var(--primary-saturation), 94%);
+  --color-primary-300: hsl(var(--primary-hue), var(--primary-saturation), 90%);
+  --color-primary-400: hsl(var(--primary-hue), var(--primary-saturation), 84%);
+  --color-primary-500: hsl(var(--primary-hue), var(--primary-saturation), 68%);
+  --color-primary-600: hsl(var(--primary-hue), var(--primary-saturation), 56%);
+  --color-primary-700: hsl(var(--primary-hue), var(--primary-saturation), 54%);
+  --color-primary-800: hsl(var(--primary-hue), var(--primary-saturation), 47%);
+  --color-primary-900: hsl(var(--primary-hue), var(--primary-saturation), 38%);
 
-  --color-secondary-50: hsl(var(--secondary-hue), 100%, 97%);
-  --color-secondary-100: hsl(var(--secondary-hue), 100%, 97%);
-  --color-secondary-200: hsl(var(--secondary-hue), 100%, 94%);
-  --color-secondary-300: hsl(var(--secondary-hue), 100%, 90%);
-  --color-secondary-400: hsl(var(--secondary-hue), 100%, 84%);
-  --color-secondary-500: hsl(var(--secondary-hue), 99%, 68%);
-  --color-secondary-600: hsl(var(--secondary-hue), 86%, 56%);
-  --color-secondary-700: hsl(var(--secondary-hue), 83%, 54%);
-  --color-secondary-800: hsl(var(--secondary-hue), 71%, 47%);
-  --color-secondary-900: hsl(var(--secondary-hue), 72%, 38%);
+  --color-secondary-50: hsl(var(--secondary-hue), var(--secondary-saturation), 97%);
+  --color-secondary-100: hsl(var(--secondary-hue), var(--secondary-saturation), 97%);
+  --color-secondary-200: hsl(var(--secondary-hue), var(--secondary-saturation), 94%);
+  --color-secondary-300: hsl(var(--secondary-hue), var(--secondary-saturation), 90%);
+  --color-secondary-400: hsl(var(--secondary-hue), var(--secondary-saturation), 84%);
+  --color-secondary-500: hsl(var(--secondary-hue), var(--secondary-saturation), 68%);
+  --color-secondary-600: hsl(var(--secondary-hue), var(--secondary-saturation), 56%);
+  --color-secondary-700: hsl(var(--secondary-hue), var(--secondary-saturation), 54%);
+  --color-secondary-800: hsl(var(--secondary-hue), var(--secondary-saturation), 47%);
+  --color-secondary-900: hsl(var(--secondary-hue), var(--secondary-saturation), 38%);
+
+  --color-gray-50: hsl(var(--hue-gray), var(--saturation-gray), 98%);
+  --color-gray-100: hsl(var(--hue-gray), var(--saturation-gray), 96%);
+  --color-gray-200: hsl(var(--hue-gray), var(--saturation-gray), 91%);
+  --color-gray-300: hsl(var(--hue-gray), var(--saturation-gray), 84%);
+  --color-gray-400: hsl(var(--hue-gray), var(--saturation-gray), 64%);
+  --color-gray-500: hsl(var(--hue-gray), var(--saturation-gray), 46%);  
+  --color-gray-600: hsl(var(--hue-gray), var(--saturation-gray), 34%);  
+  --color-gray-700: hsl(var(--hue-gray), var(--saturation-gray), 27%);  
+  --color-gray-800: hsl(var(--hue-gray), var(--saturation-gray), 17%);  
+  --color-gray-900: hsl(var(--hue-gray), var(--saturation-gray), 11%);  
+  --color-gray-950: hsl(var(--hue-gray), var(--saturation-gray), 4%);
 }
 
 @source "../../node_modules/flowbite-svelte/dist";

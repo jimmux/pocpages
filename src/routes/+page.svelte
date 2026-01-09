@@ -16,7 +16,7 @@
 				]
 		},
 		{
-			title: "Flowbite Svelte componewnt library",
+			title: "Flowbite Svelte component library",
 			text: [
 				"Works well with Tailwind, easy to adjust, doesn't get in the way, good-enough defaults.",
 				"It provides enough for rapid development while not getting in the way."
@@ -31,12 +31,14 @@
 	];
 </script>
 
-<section class="is-fullheight bg-aurora-trails">
+<section class="is-fullheight bg-aurora-trails p-10 flex flex-col items-center">
 	
-	<div class="text-center">
-		<Heading tag="h1">POC Pages</Heading>
-		<Heading tag="h2">Useful, quick</Heading>
-	</div>
+	<Card class="p-6">
+		<div class="text-center">
+			<Heading tag="h1">POC Pages</Heading>
+			<Heading tag="h2">Useful, quick</Heading>
+		</div>
+	</Card>
 
 	<div>
 		<h3>Useful bits</h3>

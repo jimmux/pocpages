@@ -38,7 +38,7 @@
 
 <Modal 
     title={titleText} 
-    form bind:open={open} 
+    form bind:open={open}
     {onaction}
 >
   {@render children()}
